@@ -109,81 +109,96 @@ public class MainActivity extends AppCompatActivity {
         checkWinnerInColumns();
 
         if (isThereAWinner()) {
-            if (winner == PLAYER_ONE_ID) {
-                Toast.makeText(this, "Player 1 is the winner!", Toast.LENGTH_LONG).show();
+            if (winnerId == PLAYER_ONE_ID) {
+                Toast.makeText(this, "Player 1 is the winnerId!", Toast.LENGTH_LONG).show();
             }
 
-            if (winner == PLAYER_TWO_ID) {
-                Toast.makeText(this, "Player 2 is the winner!", Toast.LENGTH_LONG).show();
+            if (winnerId == PLAYER_TWO_ID) {
+                Toast.makeText(this, "Player 2 is the winnerId!", Toast.LENGTH_LONG).show();
             }
         }
     }
 
     private void checkWinnerInRows() {
-        int[] row1 = {1, 2, 3};
-        int[] row2 = {4, 5, 6};
-        int[] row3 = {7, 8, 9};
-
         // First Row
-        if (Arrays.asList(row1).contains(player1)) {
-            winner = PLAYER_ONE_ID;
+        for (int row = 1; row <= 3; row++) {
+            if (player1.contains(row)) {
+                winnerId = PLAYER_ONE_ID;
+            }
         }
-        if (Arrays.asList(row1).contains(player2)) {
-            winner = PLAYER_TWO_ID;
+        for (int row = 1; row <= 3; row++) {
+            if (player2.contains(row)) {
+                winnerId = PLAYER_TWO_ID;
+            }
         }
 
         // Second Row
-        if (Arrays.asList(row2).contains(player1)) {
-            winner = PLAYER_ONE_ID;
+        for (int row = 4; row <= 6; row++) {
+            if (player1.contains(row)) {
+                winnerId = PLAYER_ONE_ID;
+            }
         }
-        if (Arrays.asList(row2).contains(player2)) {
-            winner = PLAYER_TWO_ID;
+        for (int row = 4; row <= 6; row++) {
+            if (player2.contains(row)) {
+                winnerId = PLAYER_TWO_ID;
+            }
         }
 
         // Third Row
-        if (Arrays.asList(row3).contains(player1)) {
-            winner = PLAYER_ONE_ID;
+        for (int row = 7; row <= 9; row++) {
+            if (player1.contains(row)) {
+                winnerId = PLAYER_ONE_ID;
+            }
         }
-        if (Arrays.asList(row3).contains(player2)) {
-            winner = PLAYER_TWO_ID;
+        for (int row = 7; row <= 9; row++) {
+            if (player2.contains(row)) {
+                winnerId = PLAYER_TWO_ID;
+            }
         }
     }
 
-    private void checkWinnerInColumns()
-    {
-        int[] col1 = {1, 4, 7};
-        int[] col2 = {2, 5, 8};
-        int[] col3 = {3, 6, 9};
-
+    private void checkWinnerInColumns() {
         // First Column
-        if (Arrays.asList(col1).contains(player1)) {
-            winner = PLAYER_ONE_ID;
+        for (int row = 1; row <= 7; row+=3) {
+            if (player1.contains(row)) {
+                winnerId = PLAYER_ONE_ID;
+            }
         }
-        if (Arrays.asList(col1).contains(player2)) {
-            winner = PLAYER_TWO_ID;
+        for (int row = 1; row <= 7; row+=3) {
+            if (player2.contains(row)) {
+                winnerId = PLAYER_TWO_ID;
+            }
         }
 
         // Second Column
-        if (Arrays.asList(col2).contains(player1)) {
-            winner = PLAYER_ONE_ID;
+        for (int row = 2; row <= 8; row+=3) {
+            if (player1.contains(row)) {
+                winnerId = PLAYER_ONE_ID;
+            }
         }
-        if (Arrays.asList(col2).contains(player2)) {
-            winner = PLAYER_TWO_ID;
+        for (int row = 2; row <= 8; row+=3) {
+            if (player2.contains(row)) {
+                winnerId = PLAYER_TWO_ID;
+            }
         }
 
         // Third Column
-        if (Arrays.asList(col3).contains(player1)) {
-            winner = PLAYER_ONE_ID;
+        for (int row = 3; row <= 9; row+=3) {
+            if (player1.contains(row)) {
+                winnerId = PLAYER_ONE_ID;
+            }
         }
-        if (Arrays.asList(col3).contains(player2)) {
-            winner = PLAYER_TWO_ID;
+        for (int row = 3; row <= 9; row+=3) {
+            if (player2.contains(row)) {
+                winnerId = PLAYER_TWO_ID;
+            }
         }
     }
 
     private void artificialPlayer() {
         ArrayList<Integer> unselectedCells = new ArrayList<Integer>();
 
-        for (int cellId = 1; cellId < 10; cellId++) {
+        for (int cellId = 1; cellId <= MAX_CELLS; cellId++) {
             if (!(player1.contains(cellId) || player2.contains(cellId))) {
                 unselectedCells.add(cellId);
             }
@@ -195,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
     private void runArtificialPlayer(ArrayList<Integer> unselectedCells) {
 
         Random random = new Random();
-        int randomIndex = random.nextInt(unselectedCells.size() - 0) + 1;
+        int randomIndex = random.nextInt(unselectedCells.size() - 0) + 0;
         int cellId = unselectedCells.get(randomIndex);
 
         Button btnSelected;
@@ -244,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isThereAWinner() {
-        return winner != -1;
+        return winnerId != -1;
     }
 
     private void log(int cellId, Button btnSelected) {
