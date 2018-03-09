@@ -202,49 +202,49 @@ public class MainActivity extends AppCompatActivity {
         Button btnSelected;
         switch (cellId) {
             case 1:
-                btnSelected = (Button) findViewById(R.id.btn1);
+                btnSelected = findViewById(R.id.btn1);
                 break;
 
             case 2:
-                btnSelected = (Button) findViewById(R.id.btn2);
+                btnSelected = findViewById(R.id.btn2);
                 break;
 
             case 3:
-                btnSelected = (Button) findViewById(R.id.btn3);
+                btnSelected = findViewById(R.id.btn3);
                 break;
 
             case 4:
-                btnSelected = (Button) findViewById(R.id.btn4);
+                btnSelected = findViewById(R.id.btn4);
                 break;
 
             case 5:
-                btnSelected = (Button) findViewById(R.id.btn5);
+                btnSelected = findViewById(R.id.btn5);
                 break;
 
             case 6:
-                btnSelected = (Button) findViewById(R.id.btn6);
+                btnSelected = findViewById(R.id.btn6);
                 break;
 
             case 7:
-                btnSelected = (Button) findViewById(R.id.btn7);
+                btnSelected = findViewById(R.id.btn7);
                 break;
 
             case 8:
-                btnSelected = (Button) findViewById(R.id.btn8);
+                btnSelected = findViewById(R.id.btn8);
                 break;
 
             case 9:
-                btnSelected = (Button) findViewById(R.id.btn9);
+                btnSelected = findViewById(R.id.btn9);
                 break;
 
             default:
-                btnSelected = (Button) findViewById(R.id.btn1);
+                btnSelected = findViewById(R.id.btn1);
         }
 
         playGame(cellId, btnSelected);
     }
 
     private boolean isThereAWinner() {
-        return winer != 0;
+        return winner != 0;
     }
 }
