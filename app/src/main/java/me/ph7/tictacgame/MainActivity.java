@@ -202,15 +202,15 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        runArtificialPlayer(unselectedCells);
-    }
-
-    private void runArtificialPlayer(ArrayList<Integer> unselectedCells) {
-
         Random random = new Random();
-        int randomIndex = random.nextInt(unselectedCells.size() - 0) + 0;
+        int randomIndex = random.nextInt(unselectedCells.size());
         int cellId = unselectedCells.get(randomIndex);
 
+        Button btnSelected = getArtificialSelectedButton(cellId);
+        playGame(cellId, btnSelected);
+    }
+
+    private Button getArtificialSelectedButton(int cellId) {
         Button btnSelected;
         switch (cellId) {
             case 1:
@@ -253,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
                 btnSelected = findViewById(R.id.btn1);
         }
 
-        playGame(cellId, btnSelected);
+        return btnSelected;
     }
 
     private boolean isThereAWinner() {
