@@ -187,7 +187,6 @@ public class MainActivity extends AppCompatActivity {
             if (!(player1.contains(cellId) || player2.contains(cellId))) {
                 unselectedCells.add(cellId);
             }
-
         }
 
         runArtificialPlayer(unselectedCells);
