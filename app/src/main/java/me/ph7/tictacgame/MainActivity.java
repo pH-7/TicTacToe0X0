@@ -14,13 +14,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final int PLAYER_ONE_ID = 1;
     public static final int PLAYER_TWO_ID = 2;
 
-    private int winer = -1;
+    private int winer = 0;
 
     ArrayList<Integer> player1 = new ArrayList<Integer>();
     ArrayList<Integer> player2 = new ArrayList<Integer>();
@@ -84,12 +85,14 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Player:", String.valueOf(cellId));
         Log.d("Button Text:", btnSelected.getText().toString());
 
-        if (activePlayer == 1) {
+        if (activePlayer == PLAYER_ONE_ID) {
             btnSelected.setText("X");
             btnSelected.setBackgroundColor(Color.GREEN);
             player1.add(cellId);
             activePlayer = 2;
-        } else if (activePlayer == 2) {
+
+            artificialPlayer();
+        } else if (activePlayer == PLAYER_TWO_ID) {
             btnSelected.setText("0");
             btnSelected.setBackgroundColor(Color.YELLOW);
             player2.add(cellId);
@@ -175,6 +178,70 @@ public class MainActivity extends AppCompatActivity {
         if (Arrays.asList(col3).contains(player2)) {
             winer = PLAYER_TWO_ID;
         }
+    }
+
+    private void artificialPlayer() {
+        ArrayList<Integer> unselectedCells = new ArrayList<Integer>();
+
+        for (int cellId = 1; cellId < 10; cellId++) {
+            if (!(player1.contains(cellId) || player2.contains(cellId))) {
+                unselectedCells.add(cellId);
+            }
+
+        }
+
+        runArtificialPlayer(unselectedCells);
+    }
+
+    private void runArtificialPlayer(ArrayList<Integer> unselectedCells) {
+
+        Random random = new Random();
+        int randomIndex = random.nextInt(unselectedCells.size() - 0) + 0;
+        int cellId = unselectedCells.get(randomIndex);
+
+        Button btnSelected;
+        switch (cellId) {
+            case 1:
+                btnSelected = (Button) findViewById(R.id.btn1);
+                break;
+
+            case 2:
+                btnSelected = (Button) findViewById(R.id.btn2);
+                break;
+
+            case 3:
+                btnSelected = (Button) findViewById(R.id.btn3);
+                break;
+
+            case 4:
+                btnSelected = (Button) findViewById(R.id.btn4);
+                break;
+
+            case 5:
+                btnSelected = (Button) findViewById(R.id.btn5);
+                break;
+
+            case 6:
+                btnSelected = (Button) findViewById(R.id.btn6);
+                break;
+
+            case 7:
+                btnSelected = (Button) findViewById(R.id.btn7);
+                break;
+
+            case 8:
+                btnSelected = (Button) findViewById(R.id.btn8);
+                break;
+
+            case 9:
+                btnSelected = (Button) findViewById(R.id.btn9);
+                break;
+
+            default:
+                btnSelected = (Button) findViewById(R.id.btn1);
+        }
+
+        playGame(cellId, btnSelected);
     }
 
     private boolean isThereAWinner() {
