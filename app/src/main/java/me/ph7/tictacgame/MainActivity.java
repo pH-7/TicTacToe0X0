@@ -20,13 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int PLAYER_ONE_ID = 1;
     public static final int PLAYER_TWO_ID = 2;
+    public static final int MAX_CELLS = 9;
 
-    private int winner = -1;
+    private int winnerId = -1;
 
-    ArrayList<Integer> player1 = new ArrayList<Integer>();
-    ArrayList<Integer> player2 = new ArrayList<Integer>();
+    private ArrayList<Integer> player1 = new ArrayList<Integer>();
+    private ArrayList<Integer> player2 = new ArrayList<Integer>();
 
-    int activePlayer = PLAYER_ONE_ID; // 1 = first, 2 = second
+    private int activePlayer = PLAYER_ONE_ID; // 1 = first, 2 = second
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
