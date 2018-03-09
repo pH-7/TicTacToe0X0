@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnClick(View view) {
-        Button btnSelected = (Button)view;
+        Button btnSelected = (Button) view;
         int cellId = 0; // Default value
 
         switch (btnSelected.getId()) {
@@ -102,8 +102,7 @@ public class MainActivity extends AppCompatActivity {
         checkWinner();
     }
 
-    private void checkWinner()
-    {
+    private void checkWinner() {
         checkWinnerInRows();
         checkWinnerInColumns();
 
@@ -158,36 +157,36 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkWinnerInColumns() {
         // First Column
-        for (int row = 1; row <= 7; row+=3) {
+        for (int row = 1; row <= 7; row += 3) {
             if (player1.contains(row)) {
                 winnerId = PLAYER_ONE_ID;
             }
         }
-        for (int row = 1; row <= 7; row+=3) {
+        for (int row = 1; row <= 7; row += 3) {
             if (player2.contains(row)) {
                 winnerId = PLAYER_TWO_ID;
             }
         }
 
         // Second Column
-        for (int row = 2; row <= 8; row+=3) {
+        for (int row = 2; row <= 8; row += 3) {
             if (player1.contains(row)) {
                 winnerId = PLAYER_ONE_ID;
             }
         }
-        for (int row = 2; row <= 8; row+=3) {
+        for (int row = 2; row <= 8; row += 3) {
             if (player2.contains(row)) {
                 winnerId = PLAYER_TWO_ID;
             }
         }
 
         // Third Column
-        for (int row = 3; row <= 9; row+=3) {
+        for (int row = 3; row <= 9; row += 3) {
             if (player1.contains(row)) {
                 winnerId = PLAYER_ONE_ID;
             }
         }
-        for (int row = 3; row <= 9; row+=3) {
+        for (int row = 3; row <= 9; row += 3) {
             if (player2.contains(row)) {
                 winnerId = PLAYER_TWO_ID;
             }
