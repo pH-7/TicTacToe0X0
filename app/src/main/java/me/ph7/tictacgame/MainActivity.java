@@ -82,8 +82,7 @@ public class MainActivity extends AppCompatActivity {
     public void playGame(int cellId, Button btnSelected) {
         btnSelected.setBackgroundColor(Color.RED);
 
-        Log.d("Player:", String.valueOf(cellId));
-        Log.d("Button Text:", btnSelected.getText().toString());
+        log(cellId, btnSelected);
 
         if (activePlayer == PLAYER_ONE_ID) {
             btnSelected.setText("X");
@@ -245,5 +244,10 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean isThereAWinner() {
         return winner != -1;
+    }
+
+    private void log(int cellId, Button btnSelected) {
+        Log.d("Player:", String.valueOf(cellId));
+        Log.d("Button Text:", btnSelected.getText().toString());
     }
 }
