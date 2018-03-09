@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int PLAYER_ONE_ID = 1;
     public static final int PLAYER_TWO_ID = 2;
 
-    private int winer = 0;
+    private int winner = -1;
 
     ArrayList<Integer> player1 = new ArrayList<Integer>();
     ArrayList<Integer> player2 = new ArrayList<Integer>();
@@ -109,11 +109,11 @@ public class MainActivity extends AppCompatActivity {
         checkWinnerInColumns();
 
         if (isThereAWinner()) {
-            if (winer == PLAYER_ONE_ID) {
+            if (winner == PLAYER_ONE_ID) {
                 Toast.makeText(this, "Player 1 is the winner!", Toast.LENGTH_LONG).show();
             }
 
-            if (winer == PLAYER_TWO_ID) {
+            if (winner == PLAYER_TWO_ID) {
                 Toast.makeText(this, "Player 2 is the winner!", Toast.LENGTH_LONG).show();
             }
         }
@@ -126,26 +126,26 @@ public class MainActivity extends AppCompatActivity {
 
         // First Row
         if (Arrays.asList(row1).contains(player1)) {
-            winer = PLAYER_ONE_ID;
+            winner = PLAYER_ONE_ID;
         }
         if (Arrays.asList(row1).contains(player2)) {
-            winer = PLAYER_TWO_ID;
+            winner = PLAYER_TWO_ID;
         }
 
         // Second Row
         if (Arrays.asList(row2).contains(player1)) {
-            winer = PLAYER_ONE_ID;
+            winner = PLAYER_ONE_ID;
         }
         if (Arrays.asList(row2).contains(player2)) {
-            winer = PLAYER_TWO_ID;
+            winner = PLAYER_TWO_ID;
         }
 
         // Third Row
         if (Arrays.asList(row3).contains(player1)) {
-            winer = PLAYER_ONE_ID;
+            winner = PLAYER_ONE_ID;
         }
         if (Arrays.asList(row3).contains(player2)) {
-            winer = PLAYER_TWO_ID;
+            winner = PLAYER_TWO_ID;
         }
     }
 
@@ -157,26 +157,26 @@ public class MainActivity extends AppCompatActivity {
 
         // First Column
         if (Arrays.asList(col1).contains(player1)) {
-            winer = PLAYER_ONE_ID;
+            winner = PLAYER_ONE_ID;
         }
         if (Arrays.asList(col1).contains(player2)) {
-            winer = PLAYER_TWO_ID;
+            winner = PLAYER_TWO_ID;
         }
 
         // Second Column
         if (Arrays.asList(col2).contains(player1)) {
-            winer = PLAYER_ONE_ID;
+            winner = PLAYER_ONE_ID;
         }
         if (Arrays.asList(col2).contains(player2)) {
-            winer = PLAYER_TWO_ID;
+            winner = PLAYER_TWO_ID;
         }
 
         // Third Column
         if (Arrays.asList(col3).contains(player1)) {
-            winer = PLAYER_ONE_ID;
+            winner = PLAYER_ONE_ID;
         }
         if (Arrays.asList(col3).contains(player2)) {
-            winer = PLAYER_TWO_ID;
+            winner = PLAYER_TWO_ID;
         }
     }
 
