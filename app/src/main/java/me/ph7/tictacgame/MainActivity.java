@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> player1 = new ArrayList<Integer>();
     ArrayList<Integer> player2 = new ArrayList<Integer>();
 
-    int activePlayer = 1; // 1 = first, 2 = second
+    int activePlayer = PLAYER_ONE_ID; // 1 = first, 2 = second
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,14 +89,14 @@ public class MainActivity extends AppCompatActivity {
             btnSelected.setText("X");
             btnSelected.setBackgroundColor(Color.GREEN);
             player1.add(cellId);
-            activePlayer = 2;
+            activePlayer = PLAYER_TWO_ID;
 
             artificialPlayer();
         } else if (activePlayer == PLAYER_TWO_ID) {
             btnSelected.setText("0");
             btnSelected.setBackgroundColor(Color.YELLOW);
             player2.add(cellId);
-            activePlayer = 1;
+            activePlayer = PLAYER_ONE_ID;
         }
 
         btnSelected.setEnabled(false);
