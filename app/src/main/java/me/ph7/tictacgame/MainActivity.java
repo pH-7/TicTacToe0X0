@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
     private void runArtificialPlayer(ArrayList<Integer> unselectedCells) {
 
         Random random = new Random();
-        int randomIndex = random.nextInt(unselectedCells.size() - 0) + 0;
+        int randomIndex = random.nextInt(unselectedCells.size() - 0) + 1;
         int cellId = unselectedCells.get(randomIndex);
 
         Button btnSelected;
