@@ -245,6 +245,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isThereAWinner() {
-        return winner != 0;
+        return winner != -1;
     }
 }
