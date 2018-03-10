@@ -119,77 +119,54 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkWinnerInRows() {
         // First Row
-        for (int row = 1; row <= 3; row++) {
-            if (player1.contains(row)) {
-                winnerId = PLAYER_ONE_ID;
-            }
+        if (player1.contains(1) && player1.contains(2) && player1.contains(3)) {
+            winnerId = PLAYER_ONE_ID;
         }
-        for (int row = 1; row <= 3; row++) {
-            if (player2.contains(row)) {
-                winnerId = PLAYER_TWO_ID;
-            }
+        if (player2.contains(1) && player2.contains(2) && player2.contains(3)) {
+            winnerId = PLAYER_TWO_ID;
         }
 
         // Second Row
-        for (int row = 4; row <= 6; row++) {
-            if (player1.contains(row)) {
-                winnerId = PLAYER_ONE_ID;
-            }
+        if (player1.contains(4) && player1.contains(5) && player1.contains(6)) {
+            winnerId = PLAYER_ONE_ID;
         }
-        for (int row = 4; row <= 6; row++) {
-            if (player2.contains(row)) {
-                winnerId = PLAYER_TWO_ID;
-            }
+        if (player2.contains(4) && player2.contains(5) && player2.contains(6)) {
+            winnerId = PLAYER_TWO_ID;
         }
 
         // Third Row
-        for (int row = 7; row <= 9; row++) {
-            if (player1.contains(row)) {
-                winnerId = PLAYER_ONE_ID;
-            }
+        if (player1.contains(7) && player1.contains(8) && player1.contains(9)) {
+            winnerId = PLAYER_ONE_ID;
         }
-        for (int row = 7; row <= 9; row++) {
-            if (player2.contains(row)) {
-                winnerId = PLAYER_TWO_ID;
-            }
+        if (player2.contains(7) && player2.contains(8) && player2.contains(9)) {
+            winnerId = PLAYER_TWO_ID;
         }
     }
 
     private void checkWinnerInColumns() {
+
         // First Column
-        for (int row = 1; row <= 7; row += 3) {
-            if (player1.contains(row)) {
-                winnerId = PLAYER_ONE_ID;
-            }
+        if (player1.contains(1) && player1.contains(4) && player1.contains(7)) {
+            winnerId = PLAYER_ONE_ID;
         }
-        for (int row = 1; row <= 7; row += 3) {
-            if (player2.contains(row)) {
-                winnerId = PLAYER_TWO_ID;
-            }
+        if (player2.contains(1) && player2.contains(4) && player2.contains(7)) {
+            winnerId = PLAYER_TWO_ID;
         }
 
         // Second Column
-        for (int row = 2; row <= 8; row += 3) {
-            if (player1.contains(row)) {
-                winnerId = PLAYER_ONE_ID;
-            }
+        if (player1.contains(1) && player1.contains(4) && player1.contains(7)) {
+            winnerId = PLAYER_ONE_ID;
         }
-        for (int row = 2; row <= 8; row += 3) {
-            if (player2.contains(row)) {
-                winnerId = PLAYER_TWO_ID;
-            }
+        if (player2.contains(1) && player2.contains(4) && player2.contains(7)) {
+            winnerId = PLAYER_TWO_ID;
         }
 
         // Third Column
-        for (int row = 3; row <= 9; row += 3) {
-            if (player1.contains(row)) {
-                winnerId = PLAYER_ONE_ID;
-            }
+        if (player1.contains(3) && player1.contains(6) && player1.contains(9)) {
+            winnerId = PLAYER_ONE_ID;
         }
-        for (int row = 3; row <= 9; row += 3) {
-            if (player2.contains(row)) {
-                winnerId = PLAYER_TWO_ID;
-            }
+        if (player2.contains(3) && player2.contains(6) && player2.contains(9)) {
+            winnerId = PLAYER_TWO_ID;
         }
     }
 
